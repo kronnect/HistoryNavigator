@@ -9,10 +9,9 @@ namespace HistoryNavigator
     {
         public const string id = "HistoryNavigator/Left";
 
-        public LeftArrowButton() 
+        public LeftArrowButton()
         {
-            //text = "Back";
-            icon = Resources.Load<Texture2D>(path: "History/leftArrow");
+            icon = (Texture2D) EditorGUIUtility.IconContent(name: "ArrowNavigationLeft").image;
             clicked += OnClick;
             UpdatePrevious(previous: null);
             

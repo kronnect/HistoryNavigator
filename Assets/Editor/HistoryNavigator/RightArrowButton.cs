@@ -9,12 +9,12 @@ namespace HistoryNavigator
     {
         public const string id = "HistoryNavigator/Right";
 
-        public RightArrowButton() 
+        public RightArrowButton()
         {
-            //text = "Forward";
-            icon = Resources.Load<Texture2D>(path: "History/rightArrow");
+            icon = (Texture2D) EditorGUIUtility.IconContent(name: "ArrowNavigationRight").image;
             clicked += OnClick;
-            UpdateNext(null);
+            UpdateNext(next: null);
+            
             HistoryNavigatorOverlay.rightArrowButton = this;
         }
 
