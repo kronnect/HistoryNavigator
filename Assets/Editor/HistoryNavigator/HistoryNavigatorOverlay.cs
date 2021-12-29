@@ -1,22 +1,23 @@
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Overlays;
-using UnityEngine.UIElements;
+
 using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace HistoryNavigator
 {
 
-    [Overlay(typeof(SceneView), "History Navigator")]
-    public class HistoryNavigatorOverlay : ToolbarOverlay
+    [Overlay(editorWindowType: typeof(SceneView), displayName: "History Navigator")]
+    public sealed class HistoryNavigatorOverlay : ToolbarOverlay
     {
-
-        public static List<Object> history = new List<Object>();
-        static int currentSelectionIndex = -1;
+        [PublicAPI]
+        public static readonly List<Object> history = new();
+        private static int currentSelectionIndex = -1;
         public static LeftArrowButton leftArrowButton;
         public static RightArrowButton rightArrowButton;
 
-        HistoryNavigatorOverlay() : base(LeftArrowButton.id, RightArrowButton.id)
+        private HistoryNavigatorOverlay() : base(LeftArrowButton.id, RightArrowButton.id)
         {
             Selection.selectionChanged += UpdateSelection;
             AddCurrentSelection();
@@ -27,53 +28,54 @@ namespace HistoryNavigator
             Selection.selectionChanged -= UpdateSelection;
         }
 
-        void UpdateSelection()
+        private void UpdateSelection()
         {
             AddCurrentSelection();
             UpdateButtonState();
         }
 
-        void AddCurrentSelection()
+        private static void AddCurrentSelection()
         {
             Object current = Selection.activeObject;
             if (current == null) return;
             if (currentSelectionIndex >= 0 && currentSelectionIndex < history.Count && history[currentSelectionIndex] == current) return;
+            
             currentSelectionIndex++;
             int pruneCount = history.Count - currentSelectionIndex;
             if (pruneCount > 0)
             {
-                history.RemoveRange(currentSelectionIndex, pruneCount);
+                history.RemoveRange(index: currentSelectionIndex, count: pruneCount);
             }
-            history.Add(current);
+            history.Add(item: current);
         }
 
         public static void GoBack()
         {
-            Object previous = GetPreviousSelection(out currentSelectionIndex);
+            Object previous = GetPreviousSelection(position: out currentSelectionIndex);
             Selection.activeObject = previous;
         }
 
         public static void GoForward()
         {
-            Object next = GetNextSelection(out currentSelectionIndex);
+            Object next = GetNextSelection(position: out currentSelectionIndex);
             Selection.activeObject = next;
         }
 
-        static void UpdateButtonState()
+        private static void UpdateButtonState()
         {
             if (leftArrowButton != null)
             {
-                Object previous = GetPreviousSelection(out _);
-                leftArrowButton.UpdatePrevious(previous);
+                Object previous = GetPreviousSelection(position: out _);
+                leftArrowButton.UpdatePrevious(previous: previous);
             }
             if (rightArrowButton != null)
             {
-                Object next = GetNextSelection(out _);
-                rightArrowButton.UpdateNext(next);
+                Object next = GetNextSelection(position: out _);
+                rightArrowButton.UpdateNext(next: next);
             }
         }
 
-        static Object GetPreviousSelection(out int position)
+        private static Object GetPreviousSelection(out int position)
         {
             for (position = currentSelectionIndex - 1; position >= 0; position--)
             {
@@ -82,7 +84,7 @@ namespace HistoryNavigator
             return null;
         }
 
-        static Object GetNextSelection(out int position)
+        private static Object GetNextSelection(out int position)
         {
             for (position = currentSelectionIndex + 1; position < history.Count; position++)
             {
