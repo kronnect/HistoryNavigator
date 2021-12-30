@@ -1,0 +1,16 @@
+{
+    "name": "Kronnect.Tools.HistoryNavigator",
+    "rootNamespace": "Kronnect.Tools.HistoryNavigator",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
