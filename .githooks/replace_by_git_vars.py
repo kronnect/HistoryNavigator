@@ -13,6 +13,9 @@ import json
 import re
 import subprocess
 
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 # """
 # This script replaces vars written between brackets like "{{ remote.origin.url }}" by their values.
 # Used as a pre-commit hook[2] to update the README.md file's and have badges matching the current branch
@@ -48,7 +51,7 @@ for config_rule in config:
     git_vars[parts[0]] = parts[1]
 
 # Get the name
-git_vars['repository.name'] = re.findall(r"([^:]+)\.git$", git_vars['remote.origin.url'])[0]
+git_vars['current.repo'] = re.findall(r"([^:]+)\.git$", git_vars['remote.origin.url'])[0]
 
 # retrieve current branch name
 git_vars['current.branch'] = subprocess.check_output([
