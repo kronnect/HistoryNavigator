@@ -1,8 +1,8 @@
-using UnityEngine;
 using UnityEditor;
 using UnityEditor.Toolbars;
+using UnityEngine;
 
-namespace HistoryNavigator 
+namespace Kronnect.Tools.HistoryNavigator 
 {
     [EditorToolbarElement(id, targetWindows: typeof(SceneView))]
     public class LeftArrowButton : EditorToolbarButton 

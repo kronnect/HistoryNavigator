@@ -1,11 +1,12 @@
-using UnityEngine;
+using System.Collections.Generic;
+
 using UnityEditor;
 using UnityEditor.Overlays;
+using UnityEngine;
 
-using System.Collections.Generic;
 using JetBrains.Annotations;
 
-namespace HistoryNavigator
+namespace Kronnect.Tools.HistoryNavigator
 {
 
     [Overlay(editorWindowType: typeof(SceneView), displayName: "History Navigator")]

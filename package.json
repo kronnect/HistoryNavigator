@@ -1,21 +1,20 @@
 {
   "name": "com.kronnect.tools.history-navigator",
   "displayName": "Kronnect.Tools.HistoryNavigator",
-  "version": "0.0.0",
-  "unity": "2021.x",
+  "version": "1.0.0",
+  "unity": "2021.2",
   "description": "Simple history navigation toolbar (ie. back/forward internet browser style)",
   "keywords": [
     "unity",
-	"unity3d",
-	"upm",
+    "unity3d",
+    "upm",
     "common-games",
-	"kronnect",
-	"tools",
+    "kronnect",
+    "tools",
     "utility"
   ],
   "homepage": "https://github.com/kronnect/HistoryNavigator",
-  "bugs": 
-  {
+  "bugs": {
     "url": "https://github.com/kronnect/HistoryNavigator/issues"
   },
   "repository": {
@@ -24,8 +23,7 @@
   },
   "license": "MIT",
   "author": "Kronnect (edits by Common-Games)",
-  "scripts": 
-  {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

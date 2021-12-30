@@ -1,6 +1,6 @@
 {
-    "name": "CGTK.Tools.HistoryNavigator",
-    "rootNamespace": "CGTK.Tools.HistoryNavigator",
+    "name": "Kronnect.Tools.HistoryNavigator",
+    "rootNamespace": "Kronnect.Tools.HistoryNavigator",
     "references": [],
     "includePlatforms": [
         "Editor"
