@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.ShortcutManagement;
 using UnityEditor.Toolbars;
 using UnityEngine;
 
@@ -18,6 +19,10 @@ namespace Kronnect.Tools.HistoryNavigator
             HistoryNavigatorOverlay.leftArrowButton = this;
         }
 
+        //Unfortunately we can't bind it to Mouse3 at this moment.
+        //And as far as I'm aware we can't make the context the Hierarchy Window, otherwise I'd have the Scene and Hierarchy as contexts.
+        private const KeyCode _SHORTCUT = KeyCode.Minus; //KeyCode.Mouse3;
+        [Shortcut(id: "History Navigator/Prev", defaultKeyCode: _SHORTCUT)]
         private static void OnClick() 
         {
             HistoryNavigatorOverlay.GoBack();
