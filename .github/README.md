@@ -21,7 +21,7 @@ Requires Unity **2021.2** or higher.
 - Open `Window/Package Manager`
 - Click <kbd>+</kbd>
 - <kbd>Add from Git URL</kbd>
-- `https://github.com/kronnect/HistoryNavigator.git` `#branch-name` <kbd>Add</kbd>
+- `https://github.com/kronnect/HistoryNavigator.git#feature/githooks` <kbd>Add</kbd>
 
 <b>Note that Unity doesn't give you the ability to receive updates through the Package Manager this way, you will have to update manually!!</b>
 </details>
@@ -34,4 +34,4 @@ W.I.P
 Click in Scene View to display the Overlays dialog. <br>
 Enable the "History Navigator" toolbar overlay. (Press <kbd>SPACE</kbd> by default)
 
-<img src="https://github.com/kronnect/HistoryNavigator/blob/master/demo.gif?raw=true">
+<img src="https://github.com/Walter-Hulsebos/HistoryNavigatorPackage/blob/feature/githooks/demo.gif?raw=true">
