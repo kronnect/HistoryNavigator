@@ -1,8 +1,34 @@
-# HistoryNavigator
-Simple history navigation toolbar for Unity 2021.2+ (ie. back/forward internet browser style)
+![Version](https://img.shields.io/github/package-json/v/kronnect/HistoryNavigator?style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/kronnect/HistoryNavigator?color=orange&style=for-the-badge)
+
+# History Navigator for Unity
+Adds an intuitive history navigation toolbar for Unity 2021.2+ (ie. back/forward internet browser style)
+
+• [📚 Releases](https://github.com/kronnect/HistoryNavigator/releases)
+• [💬 Issues](https://github.com/kronnect/HistoryNavigator/issues)
+• [📝License](https://github.com/kronnect/HistoryNavigator/blob/#branch-name/LICENSE)
+
+## Installation
+Requires Unity **2021.2** or higher.
+
+### Option 1 - Add from GitHub
+<details>
+<summary> <b>Click here</b> </summary>
+
+- Open `Window/Package Manager`
+- Click <kbd>+</kbd>
+- <kbd>Add from Git URL</kbd>
+- `https://github.com/kronnect/HistoryNavigator.git` `#branch-name` <kbd>Add</kbd>
+
+<b>Note that Unity doesn't give you the ability to receive updates through the Package Manager this way, you will have to update manually!!</b>
+</details>
+
+### Option 2 - Add from OpenUPM
+
+W.I.P
+
+## Usage
+Click in Scene View to display the Overlays dialog. <br>
+Enable the "History Navigator" toolbar overlay. (Press <kbd>SPACE</kbd> by default)
 
 <img src="https://github.com/kronnect/HistoryNavigator/blob/master/demo.gif?raw=true">
-
-# Usage
-Click in Scene View to display the Overlays dialog. Enable the "History Navigator" toolbar overlay.
-
