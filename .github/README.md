@@ -1,3 +1,6 @@
+<!---
+This file is auto-generate by a github hook please modify .github/readme.md if you don't want to loose your work
+-->
 ![Version](https://img.shields.io/github/package-json/v/kronnect/HistoryNavigator?style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/kronnect/HistoryNavigator?color=orange&style=for-the-badge)
 
